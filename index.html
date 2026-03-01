@@ -62,17 +62,14 @@
             100% { transform: translateY(0px); }
         }
         
-        #extra-info {
-        opacity: 0;            
-        visibility: hidden;    
-        transition: opacity 0.6s ease;
-        text-align: center;
-        margin-top: 10px;
+        .info-content{
+            display:none;
+            
+    
         }
         
-        #extra-info.show {
-        opacity: 1;            
-        visibility: vi
+         .info-content.active{
+              display:block;
         }
          
          .box button:{
@@ -90,7 +87,7 @@
     <img src="momo.jpeg" alt="jpeg" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
     <p>Momo</p>
    
-   <div id="extra-info">
+   <div id="extra-info" class="info-content>
    <p>introvert, gamer, loves anime 
    at mahilig mag-gitara! </p>
    </div>
@@ -104,10 +101,10 @@
     
     btn.addEventListener('click', () => {
     
-    info.classList.toggle('show');
+    info.classList.toggle('active');
     
   
-    if (info.classList.contains('show')) {
+    if (info.classList.contains('active')) {
     btn.innerText = 'HIDE PROFILE';
     } else {
     btn.innerText = 'VIEW PROFILE';
