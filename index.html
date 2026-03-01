@@ -19,7 +19,6 @@
             -webkit-backdrop-filter: blur(15px);
             box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.7);
             
-        
             width: 90%;
             max-width: 300px;
             min-height: 250px;
@@ -60,25 +59,30 @@
             0% { transform: translateY(0px); }
             50% { transform: translateY(-20px); }
             100% { transform: translateY(0px); }
-        }
+        } 
         
-        .info-content{
-            display:none;
-            
-        }
-        
-         .info-content.active{
-              display:block;
-        }
+       .info-content {
+            display: none;
+                
+       }
+         
+         .box button:hover {
+         /* Ito ay gagana lang kapag may mouse (desktop) */
+         background-color: #BDE0FE;
+         }
+         
+         .info-content.active {
+         display: block;
+         }
          
     </style>
 </head>
 <body>
     <div class="box">
-    <img src="momo.jpeg" alt="jpeg" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
+    <img src="momo.jpeg" alt="Momo" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
     <p>Momo</p>
    
-   <div id="extra-info" class="info-content>
+   <div id="extra-info" class="info-content">
    <p>introvert, gamer, loves anime 
    at mahilig mag-gitara! </p>
    </div>
@@ -91,10 +95,10 @@
     const info = document.getElementById('extra-info');
     
     btn.addEventListener('click', () => {
-    
+    // I-t-toggle natin yung class na 'show'
     info.classList.toggle('active');
     
-  
+    // Palitan ang text ng button base sa kung may 'show' class ba o wala
     if (info.classList.contains('active')) {
     btn.innerText = 'HIDE PROFILE';
     } else {
