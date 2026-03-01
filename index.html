@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background: radial-gradient(circle at 10% 20%, rgb(255, 230, 230) 0%, rgb(200, 210, 255) 50%, rgb(255, 200, 250) 100%);
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            background-color: rgba(204, 227, 222, 0.8);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.7);
+            
+        
+            width: 90%;
+            max-width: 300px;
+            min-height: 250px;
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            gap: 15px;
+            border-radius: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .box img {
+            width: 130x;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-top: 30px;
+        }
+
+        .box p {
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .box button {
+            background-color: #A2D2FF;
+            padding: 10px 20px;
+            border: 1px solid white;
+            border-radius: 5px;
+            font-size: 12px;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        #extra-info {
+        opacity: 0;            
+        visibility: hidden;    
+        transition: opacity 0.6s ease;
+        text-align: center;
+        margin-top: 10px;
+        }
+        
+        #extra-info.show {
+        opacity: 1;            
+        visibility: vi
+        }
+         
+         .box button:{
+         background-color: #BDE0FE;
+         }
+         
+         .box button:active {
+         background-color: #89C2D9;
+         }
+         
+    </style>
+</head>
+<body>
+    <div class="box">
+    <img src="momo.jpeg" alt="Momo" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
+    <p>Momo</p>
+   
+   <div id="extra-info">
+   <p>introvert, gamer, loves anime 
+   at mahilig mag-gitara! </p>
+   </div>
+  
+    <button id="toggleBtn">VIEW PROFILE</button>
+    </div>
+    
+    <script>
+    const btn = document.getElementById('toggleBtn');
+    const info = document.getElementById('extra-info');
+    
+    btn.addEventListener('click', () => {
+    
+    info.classList.toggle('show');
+    
+  
+    if (info.classList.contains('show')) {
+    btn.innerText = 'HIDE PROFILE';
+    } else {
+    btn.innerText = 'VIEW PROFILE';
+    }
+    });
+    
+    
+</script>
+    
+    
+</body>
+</html>
