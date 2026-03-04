@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+              body {
+              overflow-x: hidden; /* Pinapatay nito ang horizontal scrollbar */
+              }
+              
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+         
+        }
+        
+        /* Header Section */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;        
+            background-color: #EAAC8B;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .latte {
+            font-weight: bold;
+            font-size: 30px;
+            color: white;  
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            font-size: 12px;
+            gap: 12px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            text-transform: uppercase;
+            -webkit-tap-highlight-color: transparent;
+        }
+        nav a:active {
+                             color: red;
+                            
+                              
+        }
+
+        /* Main Section */
+        section {
+            min-height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            background-color: #9D6B53;
+            padding: 20px;
+            position: relative; 
+            overflow: hidden; /* Importante: Tinatago ang blob kapag lumampas sa screen */
+        }
+
+        /* ANG BLOB: background aura */
+        .blob {
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            background: linear-gradient(135deg, #FFDAB9, #FF7F50);
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+            filter: blur(60px); /* Mas malabong blob para glow effect */
+            z-index: 0;         /* Nasa ilalim ng box */
+            animation: blob-float 10s infinite alternate;
+        }
+
+        /* ANG BOX: Glassmorphism Card */
+        .box {
+            position: relative; /* Para sa z-index */
+            z-index: 1;         /* Nasa ibabaw ng blob */
+            background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .box h1 {
+            color: #5D4037;
+            margin-bottom: 20px;
+        }
+
+        .box p {
+            font-size: 16px;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        /* BUTTON */
+        .box button { 
+            padding: 15px 30px;
+            border: none;
+            border-radius: 12px;
+            margin-top: 20px;
+            background-color: #5D4037;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .box button:hover {
+            transform: scale(1.05);
+            background-color: #795548;
+        }
+
+        .box button:active {
+            transform: scale(0.95);
+            background-color: #3e2723;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        @keyframes blob-float {
+            0% { transform: translate(-50px, -50px) rotate(0deg); }
+            100% { transform: translate(50px, 50px) rotate(90deg); }
+        }
+        
+        /* Responsive adjustments para sa Mobile */
+        @media (max-width: 600px) {
+        header {
+        padding: 15px 20px; /* Bawasan ang padding sa gilid */
+        }
+        
+        .latte {
+        font-size: 24px; /* Paliitin nang bahagya ang title */
+        }
+        
+        nav ul {
+        gap: 8px; /* Mas maliit na gap sa nav links */
+        font-size: 10px;
+        }
+        
+        .box {
+        width: 90%; /* Siguraduhing kasya sa loob ng screen */
+        padding: 25px;
+        }
+        
+        .box h1 {
+        font-size: 24px;
+        }
+        }
+        
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="latte">Kape</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>                                         
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <div class="blob"></div>
+        
+        <div class="box">
+            <h1>Coffee Lover</h1>
+            <p>Coffee is more than just a drink; it’s a ritual, a moment of pause, and for many, an endless source of inspiration. From poets to everyday dreamers, coffee fuels thoughts, creativity, and emotions.</p>
+            <button>Order Now</button>
+        </div>
+    </section>
+
+</body>
+</html>
